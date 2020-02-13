@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { FrameworkBodyComponent } from './framework-body/framework-body.component';
 import { FrameworkContentComponent } from './framework-content/framework-content.component';
 import { TitleBarComponent } from './title-bar/title-bar.component';
@@ -14,6 +17,12 @@ import { MenuComponent } from './menus/menu/menu.component';
 import { MenuItemComponent } from './menus/menu-item/menu-item.component';
 import { RouterModule } from '@angular/router';
 import { PopupMenuComponent } from './menus/popup-menu/popup-menu.component';
+import { SignInComponent } from './users/sign-in/sign-in.component';
+import { RegisterUserComponent } from './users/register-user/register-user.component';
+import { UserApi } from './users/user-api';
+import { DynamicFormComponent } from './dynamic-forms/dynamic-form/dynamic-form.component';
+import { DynamicFieldComponent } from './dynamic-forms/dynamic-field/dynamic-field.component';
+import { PanelComponent } from './panels/panel/panel.component';
 
 @NgModule({
   declarations: [
@@ -26,11 +35,19 @@ import { PopupMenuComponent } from './menus/popup-menu/popup-menu.component';
     ScreenBelowLarge, 
     MenuComponent, 
     MenuItemComponent, 
-    PopupMenuComponent
+    PopupMenuComponent, 
+    SignInComponent, 
+    RegisterUserComponent, 
+    DynamicFormComponent,
+    DynamicFieldComponent, 
+    PanelComponent
   ],
   imports: [
     CommonModule, 
-    RouterModule
+    RouterModule,
+    FormsModule, 
+    ReactiveFormsModule,
+    BrowserAnimationsModule
   ],
   providers: [
     FrameworkConfigService, 
@@ -40,7 +57,11 @@ import { PopupMenuComponent } from './menus/popup-menu/popup-menu.component';
   exports: [
     FrameworkBodyComponent,
     FrameworkContentComponent,
-    TitleBarComponent
+    TitleBarComponent, 
+    DynamicFormComponent, 
+    PanelComponent, 
+    ScreenLarge,
+    ScreenBelowLarge
   ]
 })
 export class FwModule { }

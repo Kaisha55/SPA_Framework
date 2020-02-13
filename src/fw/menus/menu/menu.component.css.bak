@@ -7,7 +7,7 @@
 
 :host(.vertical-menu) {
     display: inline-block;
-    max-width: 200px;
+    width: 200px;
     min-width: 200px;
     padding-left: 4px;
     flex-grow: 0;
